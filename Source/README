@@ -1,0 +1,3 @@
+U mnie kompiluje sie przez:
+
+g++ boostpython.cpp -lboost_python -lpython2.6 -I /usr/include/python2.6/ -o boost_py.so -shared
