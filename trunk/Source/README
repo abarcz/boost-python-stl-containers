@@ -1,3 +1,8 @@
-U mnie kompiluje sie przez:
+W pliku boostpython.cpp jest przykladowe wykorzystanie boost::python (funkcja zwraca inta z przekazanego doubla, nic nadzwyczajnego ;)). W boost.py - sposob wykorzystania w Pythonie
 
-g++ boostpython.cpp -lboost_python -lpython2.6 -I /usr/include/python2.6/ -o boost_py.so -shared
+U mnie kompiluje sie i uruchamia przez:
+
+g++ boostpython.cpp -lboost_python -lpython2.6 -I /usr/include/python2.6/ -o example.so -shared
+python boost.py
+
+i prawidlowo wyswietla 2.
