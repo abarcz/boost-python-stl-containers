@@ -1,8 +1,3 @@
-W pliku boostpython.cpp jest przykladowe wykorzystanie boost::python (funkcja zwraca inta z przekazanego doubla, nic nadzwyczajnego ;)). W boost.py - sposob wykorzystania w Pythonie
+Plik vectortolist.cpp:
 
-U mnie kompiluje sie i uruchamia przez:
-
-g++ boostpython.cpp -lboost_python -lpython2.6 -I /usr/include/python2.6/ -o example.so -shared
-python boost.py
-
-i prawidlowo wyswietla 2.
+udaje pythonowa liste przy pomocy std::vectora
