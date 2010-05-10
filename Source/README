@@ -1,3 +1,9 @@
-Plik vectortolist.cpp:
+Plik vectorandmap.cpp:
 
-udaje pythonowa liste przy pomocy std::vectora
+udaje pythonowa liste przy pomocy std::vectora i mape przy pomocy std::map.
+Brakuje wielu rzeczy, m.in:
+
+- operacje iteratorowe
+- generycznosc (na razie jest zakodowany na stale vector<int> i map<int, std::string>
+- obsluga wyjatkow
+- obsluga slice'ow (na przyklad [2:4] )
