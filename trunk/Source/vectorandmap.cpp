@@ -1,17 +1,18 @@
 #include <boost/python.hpp>
 #include <boost/python/class.hpp>
 #include <boost/python/class_fwd.hpp>
+#include <boost/python/iterator.hpp>
 #include <vector>
 #include <map>
 #include <string>
 
 using namespace std;
 
-typedef std::vector<int> Int;
+typedef std::vector<int> Vec;
 typedef std::map<int, string> Map;
 
 template<class T>
-struct vector_item {
+struct vector_helper {
 
     typedef int V;
 
@@ -57,7 +58,8 @@ struct vector_item {
 };
 
 template<class T>
-struct map_item {
+struct map_helper {
+
 	typedef int K;
 	typedef string V;
 
@@ -76,30 +78,29 @@ struct map_item {
 	}
 };
 
-
 using namespace boost::python;
 
-BOOST_PYTHON_MODULE(example2) {
- class_<Int>("Int")
-  .def("__len__", &Int::size)
-  .def("clear", &Int::clear)
-  .def("append", &vector_item<Int>::add,
+BOOST_PYTHON_MODULE(zpr) {
+ class_<Vec>("Vec")
+  .def("__len__", &Vec::size)
+  .def("clear", &Vec::clear)
+  .def("append", &vector_helper<Vec>::add,
         with_custodian_and_ward<1,2>()) 
-  .def("__getitem__", &vector_item<Int>::get)
-  .def("__setitem__", &vector_item<Int>::set,
+  .def("__getitem__", &vector_helper<Vec>::get)
+  .def("__setitem__", &vector_helper<Vec>::set,
         with_custodian_and_ward<1,2>()) 
-  .def("__delitem__", &vector_item<Int>::del)
-  //.def("__iter__", iterator<Int>())
-  .def("__contains__", &vector_item<Int>::in)
+  .def("__delitem__", &vector_helper<Vec>::del)
+  .def("__iter__", boost::python::iterator<Vec>())
+  .def("__contains__", &vector_helper<Vec>::in)
   ;
  
  class_<Map>("Map")
   .def("__len__", &Map::size)
   .def("clear", &Map::clear)
-  .def("__getitem__", &map_item<Map>::get)
-  .def("__setitem__", &map_item<Map>::set,
+  .def("__getitem__", &map_helper<Map>::get)
+  .def("__setitem__", &map_helper<Map>::set,
   		with_custodian_and_ward<1,2>())
-  .def("__delitem__", &map_item<Map>::del)
+  .def("__delitem__", &map_helper<Map>::del)
   ;
 }
 
