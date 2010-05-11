@@ -1,9 +1,10 @@
-Plik vectorandmap.cpp:
+Plik zpr.cpp:
 
-udaje pythonowa liste przy pomocy std::vectora i mape przy pomocy std::map.
+udaje pythonowa liste przy pomocy std::vectora i std::set oraz mape przy pomocy std::map
 Brakuje wielu rzeczy, m.in:
 
 - operacje iteratorowe
 - generycznosc (na razie jest zakodowany na stale vector<int> i map<int, std::string>
 - obsluga wyjatkow
 - obsluga slice'ow (na przyklad [2:4] )
+- podzial na pliki naglowkowe (osobne dla setu, vectora i mapy)
