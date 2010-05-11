@@ -75,8 +75,11 @@ struct map_helper {
 	}
 
 	static void del(T& x, K const& i) {
-     	if(x.find(i) != x.end())
-			x.erase(i);
+		typename T::iterator iter;
+		iter = x.begin();
+		for(; iter != x.end(); ++iter);
+			if(iter->first == i)
+				x.erase(iter);
 	}
 };
 
@@ -88,6 +91,15 @@ struct set_helper {
     static void add(T& x, V const& v) {
         x.insert(v);
     }                                                                         
+
+	static void del(T& x, const V& v) {
+		typename T::iterator iter;
+		iter = x.begin();
+		for(; iter != x.end(); ++iter);
+			if(*iter == v)
+				x.erase(iter);
+     	
+	}
 
 	static bool in(T& x, V const& v) {
      	if(x.find(v) != x.end())
@@ -127,6 +139,7 @@ BOOST_PYTHON_MODULE(zpr) {
   .def("append", &set_helper<Set>::add,
   		with_custodian_and_ward<1,2>())
   .def("__contains__", &set_helper<Set>::in)
+  .def("__delitem__", &set_helper<Set>::del)
   ;
 }
 
