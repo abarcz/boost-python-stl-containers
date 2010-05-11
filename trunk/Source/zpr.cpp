@@ -5,11 +5,13 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <set>
 
 using namespace std;
 
 typedef std::vector<int> Vec;
 typedef std::map<int, string> Map;
+typedef std::set<int> Set;
 
 template<class T>
 struct vector_helper {
@@ -78,6 +80,22 @@ struct map_helper {
 	}
 };
 
+template<class T>
+struct set_helper {      
+
+	typedef int V;
+
+    static void add(T& x, V const& v) {
+        x.insert(v);
+    }                                                                         
+
+	static bool in(T& x, V const& v) {
+     	if(x.find(v) != x.end())
+			return true;
+		return false;
+	}
+};
+
 using namespace boost::python;
 
 BOOST_PYTHON_MODULE(zpr) {
@@ -101,6 +119,14 @@ BOOST_PYTHON_MODULE(zpr) {
   .def("__setitem__", &map_helper<Map>::set,
   		with_custodian_and_ward<1,2>())
   .def("__delitem__", &map_helper<Map>::del)
+  ;
+
+ class_<Set>("Set")
+  .def("__len__", &Set::size)
+  .def("clear", &Set::clear)
+  .def("append", &set_helper<Set>::add,
+  		with_custodian_and_ward<1,2>())
+  .def("__contains__", &set_helper<Set>::in)
   ;
 }
 
