@@ -13,10 +13,11 @@ typedef std::vector<int> Vec;
 typedef std::map<int, string> Map;
 typedef std::set<int> Set;
 
-template<class T>
+
+template<typename V, template <typename Element, typename Allocator> class Contener = std::vector>
 struct vector_helper {
 
-    typedef int V;
+    typedef Contener<V, std::allocator<V> > T;
 
     static const int get(T const& x, int i) {
         if(i < 0) 
@@ -59,11 +60,12 @@ struct vector_helper {
 	}
 };
 
-template<class T>
+
+template<typename K, typename V, template <typename Key, typename Element, 
+    typename Compare, typename Allocator> class Contener = std::map>
 struct map_helper {
 
-	typedef int K;
-	typedef string V;
+	typedef Contener<K, V, std::less<K>, std::allocator<std::pair<const K,V> > > T;
 
 	static const string get(T& x, K const& i) {
      	if(x.find(i) != x.end()) 
@@ -83,10 +85,10 @@ struct map_helper {
 	}
 };
 
-template<class T>
+template<typename V, template <typename Element, typename Compare, typename Allocator> class Contener = std::set>
 struct set_helper {      
 
-	typedef int V;
+	typedef Contener<V, std::less<V>, std::allocator<V> > T;
 
     static void add(T& x, V const& v) {
         x.insert(v);
@@ -114,32 +116,32 @@ BOOST_PYTHON_MODULE(zpr) {
  class_<Vec>("Vec")
   .def("__len__", &Vec::size)
   .def("clear", &Vec::clear)
-  .def("append", &vector_helper<Vec>::add,
+  .def("append", &vector_helper<int>::add,
         with_custodian_and_ward<1,2>()) 
-  .def("__getitem__", &vector_helper<Vec>::get)
-  .def("__setitem__", &vector_helper<Vec>::set,
+  .def("__getitem__", &vector_helper<int>::get)
+  .def("__setitem__", &vector_helper<int>::set,
         with_custodian_and_ward<1,2>()) 
-  .def("__delitem__", &vector_helper<Vec>::del)
+  .def("__delitem__", &vector_helper<int>::del)
   .def("__iter__", boost::python::iterator<Vec>())
-  .def("__contains__", &vector_helper<Vec>::in)
+  .def("__contains__", &vector_helper<int>::in)
   ;
  
  class_<Map>("Map")
   .def("__len__", &Map::size)
   .def("clear", &Map::clear)
-  .def("__getitem__", &map_helper<Map>::get)
-  .def("__setitem__", &map_helper<Map>::set,
+  .def("__getitem__", &map_helper<int, std::string>::get)
+  .def("__setitem__", &map_helper<int, std::string>::set,
   		with_custodian_and_ward<1,2>())
-  .def("__delitem__", &map_helper<Map>::del)
+  .def("__delitem__", &map_helper<int, std::string>::del)
   ;
 
  class_<Set>("Set")
   .def("__len__", &Set::size)
   .def("clear", &Set::clear)
-  .def("append", &set_helper<Set>::add,
+  .def("append", &set_helper<int>::add,
   		with_custodian_and_ward<1,2>())
-  .def("__contains__", &set_helper<Set>::in)
-  .def("__delitem__", &set_helper<Set>::del)
+  .def("__contains__", &set_helper<int>::in)
+  .def("__delitem__", &set_helper<int>::del)
   ;
 }
 

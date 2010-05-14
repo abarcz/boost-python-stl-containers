@@ -7,6 +7,9 @@ mapa[0] = "a"
 mapa[1] = "b"
 mapa[6] = "c"
 
+if mapa[6] != "c" :
+    print "Error"
+
 wektor.append(0)
 wektor.append(0)
 wektor.append(1)
