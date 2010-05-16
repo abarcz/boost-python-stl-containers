@@ -2,6 +2,7 @@
 #include <boost/python/class.hpp>
 #include <boost/python/class_fwd.hpp>
 #include <boost/python/iterator.hpp>
+#include <boost/shared_ptr.hpp>
 #include <vector>
 #include <map>
 #include <string>
@@ -22,21 +23,21 @@ struct vector_helper {
     static const int get(T const& x, int i) {
         if(i < 0) 
 			i += x.size();
-        if(i >= 0 && i < x.size()) 
+        if(i >= 0 && i < (int)x.size()) 
 			return x[i];
     }
 
     static void set(T& x, int i, V const& v) {
         if(i < 0) 
 			i += x.size();
-        if(i >= 0 && i < x.size())
+        if(i >= 0 && i < (int)x.size())
 			x[i] = v;
     }
 
     static void del(T& x, int i) {
         if(i < 0) 
 			i += x.size();
-        if(i >= 0 && i < x.size()) {
+        if(i >= 0 && i < (int)x.size()) {
 			typename T::iterator iter;
 			iter = x.begin();
 			for(int j = 0; j < i; ++j, ++iter);
@@ -112,6 +113,7 @@ struct set_helper {
 
 using namespace boost::python;
 
+
 BOOST_PYTHON_MODULE(zpr) {
  class_<Vec>("Vec")
   .def("__len__", &Vec::size)
@@ -145,6 +147,3 @@ BOOST_PYTHON_MODULE(zpr) {
   ;
 }
 
-int main() {
- 	return 0;
-}

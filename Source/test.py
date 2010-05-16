@@ -1,4 +1,7 @@
+print 'Hello World from test.py!'
+
 import zpr
+
 mapa = zpr.Map()
 wektor = zpr.Vec()
 set1 = zpr.Set()
@@ -48,4 +51,5 @@ set1.clear()
 
 if set1.__len__() != 0 :
 	print "Error"
+
 
