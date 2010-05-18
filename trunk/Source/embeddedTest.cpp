@@ -1,16 +1,14 @@
-#include <boost/python.hpp>
+#include <boost/python/exec.hpp>
 #include <boost/python/import.hpp>
 #include <iostream>
-#include "zpr.cpp"
+#include "stl_containers.h"
 
 using namespace boost::python;
 
-int main()
-{
+int main() {
     Py_Initialize();                    //inicjalizacja interpretera
 
-    try 
-    {
+    try  {
         object module = import("__main__");
         object globals = module.attr("__dict__");
         
@@ -19,23 +17,23 @@ int main()
             "print 'Loading shared library' \n"
             "import sys                     \n"
             "sys.path.append(\"./\")        \n"
-            "import zpr                     \n"
+            "import stl_containers          \n"
             ,globals, globals);
                    
         //test przekazania wektora z Pythona do C++
         std::cout << "\nLaunching cross-language vector passing tests..\n";
         exec(
                 "print 'Python: creating wektorPyt containing 202'  \n"
-                "wektorPyt = zpr.Vec()                              \n"
+                "wektorPyt = stl_containers.vector_int()            \n"
                 "wektorPyt.append(202)                              \n"
                 ,globals, globals);
                 
-        Vec wektor = extract<Vec>(globals["wektorPyt"]);
+        std::vector<int> wektor = extract<std::vector<int> >(globals["wektorPyt"]);
         std::cout << "C++: wektorPyt[0]== " << wektor[0] << std::endl;
         
         //test przekazania wektora z C++ do Pythona
         std::cout << "C++: creating wektorCpp containing 303" << std::endl;
-        Vec wektorCpp;
+        std::vector<int> wektorCpp;
         wektorCpp.push_back(303);
         globals["wektorCpp"] = ptr(&wektorCpp);
         exec(
@@ -51,13 +49,11 @@ int main()
         std::cout << "\nEmbedded Python tests terminated.\n";
         
     } 
-    catch (error_already_set)       //lapie bledy Pythona
-    {
+    catch (error_already_set) {     //lapie bledy Pythona
         PyErr_Print();
     }
 
     Py_Finalize();                  //zakonczenie pracy z interpreterem
-
     
     return 0;
 }
