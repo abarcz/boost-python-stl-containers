@@ -1,7 +1,12 @@
+/**
+ * Autor: Aleksy Barcz
+ * Test wykorzystujacy embeddowany interpreter Pythona do przekazywania
+ * instancji opakowanych kontenerow stl z C++ do Pythona i vice versa.
+ */ 
 #include <boost/python/exec.hpp>
 #include <boost/python/import.hpp>
 #include <iostream>
-#include "stl_containers.h"
+#include "StlContainers.hpp"
 
 using namespace boost::python;
 
@@ -17,14 +22,14 @@ int main() {
             "print 'Loading shared library' \n"
             "import sys                     \n"
             "sys.path.append(\"./\")        \n"
-            "import stl_containers          \n"
+            "import StlContainers           \n"
             ,globals, globals);
                    
         //test przekazania wektora z Pythona do C++
         std::cout << "\nLaunching cross-language vector passing tests..\n";
         exec(
                 "print 'Python: creating wektorPyt containing 202'  \n"
-                "wektorPyt = stl_containers.vector_int()            \n"
+                "wektorPyt = StlContainers.vector_int()            \n"
                 "wektorPyt.append(202)                              \n"
                 ,globals, globals);
                 
@@ -44,8 +49,8 @@ int main() {
                 ,globals, globals);
         
         //testy z zewnetrznego pliku .py
-        std::cout << "\nLaunching Python tests from test.py..\n";
-        exec_file("test.py", globals, globals);
+        std::cout << "\nLaunching Python tests from Python_test.py..\n";
+        exec_file("Python_test.py", globals, globals);
         std::cout << "\nEmbedded Python tests terminated.\n";
         
     } 

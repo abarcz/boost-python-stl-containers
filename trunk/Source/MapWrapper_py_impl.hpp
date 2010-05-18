@@ -1,18 +1,18 @@
-using namespace stl_containers_wrappers;
+using namespace StlContainersWrappers;
 
-template<typename K, typename V>
-const V map_helper<K,V>::get(Map& x, K const& i) {
+template<typename Key, typename V>
+const V MapWrapper<Key,V>::get(Map& x, Key const& i) {
     if(x.find(i) != x.end()) 
         return x[i];
 }
 
-template<typename K, typename V>
-void map_helper<K,V>::set(Map& x, K const& i, V const& v) {
+template<typename Key, typename V>
+void MapWrapper<Key,V>::set(Map& x, Key const& i, V const& v) {
     x[i] = v;
 }
 
-template<typename K, typename V>
-void map_helper<K,V>::del(Map& x, K const& i) {
+template<typename Key, typename V>
+void MapWrapper<Key,V>::del(Map& x, Key const& i) {
     typename Map::iterator iter;
     iter = x.begin();
     for(; iter != x.end(); ++iter);
@@ -20,9 +20,9 @@ void map_helper<K,V>::del(Map& x, K const& i) {
             x.erase(iter);
 }
 
-template<typename K, typename V>
-void map_helper<K,V>::wrap(std::string const& python_name) {
-    class_m_ wrapped(python_name.c_str());
+template<typename Key, typename V>
+void MapWrapper<Key,V>::wrap(std::string const& python_name) {
+    Class_m_ wrapped(python_name.c_str());
     wrapped
         .def("__len__", &Map::size)
         .def("clear", &Map::clear)
@@ -32,3 +32,4 @@ void map_helper<K,V>::wrap(std::string const& python_name) {
         .def("__delitem__", &del)
     ;
 }
+

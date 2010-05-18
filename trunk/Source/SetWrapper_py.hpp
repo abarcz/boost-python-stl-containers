@@ -1,13 +1,17 @@
-#ifndef STL_TO_PYTHON_CONTAINERS_SET_HELPER
-#define STL_TO_PYTHON_CONTAINERS_SET_HELPER
+/**
+ * Autor: Aleksy Barcz, Michal Andrzejewski
+ * Wrapper imitujący pythonowy dict za pomocą std::set
+ */
+#ifndef STL_TO_PYTHON_CONTAINERS_SET_WRAPPER
+#define STL_TO_PYTHON_CONTAINERS_SET_WRAPPER
 
 #include <boost/python/class.hpp>
 #include <set>
 
-namespace stl_containers_wrappers {
+namespace StlContainersWrappers {
 
 template<typename V>
-struct set_helper {      
+struct SetWrapper {      
 
 	typedef std::set<V, std::less<V>, std::allocator<V> > Set;
 
@@ -17,12 +21,12 @@ struct set_helper {
 
 	static bool in(Set& x, V const& v);
     
-    typedef boost::python::class_<Set> class_s_;
+    typedef boost::python::class_<Set> Class_s_;
     
     static void wrap(std::string const& python_name);
 };
 
-#include "set_helper_impl.h"
+#include "SetWrapper_py_impl.hpp"
 }
 
 #endif

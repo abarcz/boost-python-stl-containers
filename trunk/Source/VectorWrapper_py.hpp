@@ -1,14 +1,18 @@
-#ifndef STL_TO_PYTHON_CONTAINERS_VECTOR_HELPER
-#define STL_TO_PYTHON_CONTAINERS_VECTOR_HELPER
+/**
+ * Autor: Aleksy Barcz, Michal Andrzejewski
+ * Wrapper imitujący pythonowy list za pomocą std::vector
+ */
+#ifndef STL_TO_PYTHON_CONTAINERS_VECTOR_WRAPPER
+#define STL_TO_PYTHON_CONTAINERS_VECTOR_WRAPPER
 
 #include <boost/python/class.hpp>
 #include <boost/python/iterator.hpp>
 #include <vector>
 
-namespace stl_containers_wrappers {
+namespace StlContainersWrappers {
     
 template<typename V>
-struct vector_helper {
+struct VectorWrapper {
 
     typedef std::vector<V, std::allocator<V> > Vec;
 
@@ -27,7 +31,7 @@ struct vector_helper {
     static void wrap(std::string const& python_name);
 };
 
-#include "vector_helper_impl.h"
+#include "VectorWrapper_py_impl.hpp"
 }
 
 #endif
