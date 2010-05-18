@@ -1,12 +1,12 @@
-using namespace stl_containers_wrappers;
+using namespace StlContainersWrappers;
 
 template<typename V>
-void set_helper<V>::add(Set& x, V const& v) {
+void SetWrapper<V>::add(Set& x, V const& v) {
     x.insert(v);
 }                                                                         
 
 template<typename V>
-void set_helper<V>::del(Set& x, const V& v) {
+void SetWrapper<V>::del(Set& x, const V& v) {
     typename Set::iterator iter;
     iter = x.begin();
     for(; iter != x.end(); ++iter);
@@ -16,15 +16,15 @@ void set_helper<V>::del(Set& x, const V& v) {
 }
 
 template<typename V>
-bool set_helper<V>::in(Set& x, V const& v) {
+bool SetWrapper<V>::in(Set& x, V const& v) {
     if(x.find(v) != x.end())
         return true;
     return false;
 }
 
 template<typename V>
-void set_helper<V>::wrap(std::string const& python_name) {
-    class_s_ wrapped(python_name.c_str());
+void SetWrapper<V>::wrap(std::string const& python_name) {
+    Class_s_ wrapped(python_name.c_str());
     wrapped
         .def("__len__", &Set::size)
         .def("clear", &Set::clear)

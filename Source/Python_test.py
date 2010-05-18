@@ -1,10 +1,14 @@
-print 'Now running tests from test.py..'
+# Autor: Michal Andrzejewski
+#
+#
+#
+print 'Now running tests from Python_test.py..'
 
-import stl_containers
+import StlContainers
 
-mapa = stl_containers.map_int_string()
-wektor = stl_containers.vector_int()
-set1 = stl_containers.set_int()
+mapa = StlContainers.map_int_string()
+wektor = StlContainers.vector_int()
+set1 = StlContainers.set_int()
 
 mapa[0] = "a"
 mapa[1] = "b"
@@ -52,5 +56,5 @@ set1.clear()
 if set1.__len__() != 0 :
 	print "Error"
 
-print 'Tests from test.py finished'
+print 'Tests from Python_test.py finished'
 
