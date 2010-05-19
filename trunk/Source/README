@@ -1,10 +1,15 @@
-Plik zpr.cpp:
+Chwilowo calosc mozna kompilowac przez ./make i uruchamiac przez ./zpr - w wolnej chwili napisze prawdziwego make'a albo sconsa.
 
-udaje pythonowa liste przy pomocy std::vectora i std::set oraz mape przy pomocy std::map
-Brakuje wielu rzeczy, m.in:
+W pliku Python_test.py proste testy obejmujace:
+	- map_int_string
+	- vector_int
+	- set_int
+	- vector_double
+	- vector_string
+	- set_double
+	- set_string
 
-- operacje iteratorowe
-- generycznosc (na razie jest zakodowany na stale vector<int> i map<int, std::string>
-- obsluga wyjatkow
-- obsluga slice'ow (na przyklad [2:4] )
-- podzial na pliki naglowkowe (osobne dla setu, vectora i mapy)
+TODO:
+
+Powazne testy jednostkowe 	[Michal]
+Makefile/scons				[Michal]

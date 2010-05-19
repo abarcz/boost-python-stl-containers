@@ -14,6 +14,13 @@ void StlContainersWrappers::init_container_wrappers() {
     //MapWrapper<std::string,double>::wrap("map_string_double");
     
     SetWrapper<int>::wrap("set_int");
+
+	VectorWrapper<double>::wrap("vector_double");
+	SetWrapper<double>::wrap("set_double");
+
+	VectorWrapper<std::string>::wrap("vector_string");
+	SetWrapper<std::string>::wrap("set_string");
+
 }
 
 BOOST_PYTHON_MODULE(StlContainers) {
