@@ -44,6 +44,7 @@ int main() {
         exec(
                 "print 'Python: wektorCpp[0]== '    \n"
                 "print wektorCpp[0]                 \n"
+				"print 'Python: appending 321'		\n"
                 "wektorCpp.append(321)              \n"
                 "print wektorCpp[1]                 \n"
                 ,globals, globals);
