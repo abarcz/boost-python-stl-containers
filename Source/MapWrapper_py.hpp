@@ -1,6 +1,6 @@
 /**
- * Autor: Michal Andrzejewski, Aleksy Barcz
- * Wrapper imitujący pythonowy list za pomocą std::map
+ * Authors: Michal Andrzejewski, Aleksy Barcz
+ * Wrapper for std::map to act like Python list
  */
 #ifndef STL_TO_PYTHON_CONTAINERS_MAP_WRAPPER
 #define STL_TO_PYTHON_CONTAINERS_MAP_WRAPPER

@@ -9,7 +9,14 @@ W pliku Python_test.py proste testy obejmujace:
 	- set_double
 	- set_string
 
+W pliku Python_test_vectors.py bardziej zlozone testy dla 3 vectorow - int, double i std::string.
+Niedlugo postaram sie potestowac klase Foo.
+
 TODO:
 
-Powazne testy jednostkowe 	[Michal]
-Makefile/scons				[Michal]
+Mechanizm extract									[Aleks?]
+Powazne testy jednostkowe 							[Michal]
+Makefile/scons										[Michal]
+Dodatkowe metody (umozliwienie tworzenia slice'ow) 	[Michal]
+Uporzadkowanie kodu									[Aleks/Michal]
+Dokumentacja										[Aleks/Michal]

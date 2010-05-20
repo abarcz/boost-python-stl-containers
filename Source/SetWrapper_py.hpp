@@ -1,6 +1,6 @@
 /**
  * Autor: Michal Andrzejewski, Aleksy Barcz
- * Wrapper imitujący pythonowy dict za pomocą std::set
+ * Wrapper for std::set to act like Python dict
  */
 #ifndef STL_TO_PYTHON_CONTAINERS_SET_WRAPPER
 #define STL_TO_PYTHON_CONTAINERS_SET_WRAPPER
