@@ -60,13 +60,41 @@ if vector_int[2] != 3:
 	print "Error: different element was expected\n"
 	passed = 0
 
-vector_int[2] = -1                                               
+vector_int[1] = -1                                               
 
 if vector_int.__contains__(-1) == False:
 	print "Error: element is not present"
 	passed = 0
 
-if vector_int[2] != -1:
+if vector_int[1] != -1:
+	print "Error: different element was expected\n"
+	passed = 0
+
+if vector_int.index(3) != 2:
+	print "Error: indexing problem\n"
+	passed = 0
+
+if vector_int.count(3) != 1:
+	print "Error: counting problem\n"
+	passed = 0
+
+vector_int.reverse()
+
+if vector_int[0] != 3:
+	print "Error: reversing problem\n"
+	passed = 0
+
+vector_int.sort()
+
+if vector_int[0] != -1:
+	print "Error: different element was expected\n"
+	passed = 0
+
+if vector_int[1] != 1:
+	print "Error: different element was expected\n"
+	passed = 0
+
+if vector_int[2] != 3:
 	print "Error: different element was expected\n"
 	passed = 0
 
