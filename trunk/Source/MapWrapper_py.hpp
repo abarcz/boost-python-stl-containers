@@ -6,6 +6,8 @@
 #define STL_TO_PYTHON_CONTAINERS_MAP_WRAPPER
 
 #include <boost/python/class.hpp>
+#include <boost/python/list.hpp>
+#include <boost/python.hpp>
 #include <map>
 
 namespace StlContainersWrappers {
@@ -20,6 +22,14 @@ struct MapWrapper {
 	static void set(Map& x, Key const& i, V const& v);
 
 	static void del(Map& x, Key const& i);
+
+	static bool in(Map& x, const Key k);
+
+	static boost::python::list keys(Map& x);
+
+	static boost::python::list values(Map& x);
+	
+	static boost::python::list items(Map& x);
     
     typedef boost::python::class_<Map> Class_m_;
     

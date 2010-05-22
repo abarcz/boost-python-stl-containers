@@ -46,6 +46,34 @@ bool VectorWrapper<V>::in(Vec const& x, V const& v) {
 }
 
 template<typename V>
+int VectorWrapper<V>::index(Vec const& x, V const& v ) {
+ 	int i = 0;
+	typename Vec::const_iterator iter = x.begin();
+	for(; iter != x.end(); ++iter, ++i)
+		if(*iter == v) return i;
+	return -1;
+}
+
+template<typename V>
+int VectorWrapper<V>::count(Vec const& x, V const& v ) {
+ 	int i = 0;
+	typename Vec::const_iterator iter = x.begin();
+	for(; iter != x.end(); ++iter)
+		if(*iter == v) ++i;
+	return i;
+}
+
+template<typename V>
+void VectorWrapper<V>::sort(Vec& x) {
+ 	std::sort(x.begin(), x.end());
+}
+
+template<typename V>
+void VectorWrapper<V>::reverse(Vec& x) {
+ 	std::reverse(x.begin(), x.end());
+}
+
+template<typename V>
 void VectorWrapper<V>::wrap(std::string const& python_name) {
     class_v_ wrapped(python_name.c_str());
     wrapped
@@ -59,6 +87,10 @@ void VectorWrapper<V>::wrap(std::string const& python_name) {
       .def("__delitem__", &del)
       .def("__iter__", boost::python::iterator<Vec>())
       .def("__contains__", &in)
+	  .def("index", &index)
+	  .def("count", &count)
+	  .def("sort", &sort)
+	  .def("reverse", &reverse)
     ;
     //return wrapped;
 }

@@ -18,7 +18,42 @@ void MapWrapper<Key,V>::del(Map& x, Key const& i) {
     for(; iter != x.end(); ++iter);
         if(iter->first == i)
             x.erase(iter);
+}                             
+
+template<typename Key, typename V>
+bool MapWrapper<Key,V>::in(Map& x, const Key k) {
+	return x.find(k) != x.end();
 }
+
+template<typename Key, typename V>
+boost::python::list MapWrapper<Key,V>::keys(Map& x) {
+	boost::python::list t;
+	typename Map::iterator iter;
+	iter = x.begin();
+	for(; iter != x.end(); ++iter)
+		t.append(iter->first);
+	return t;
+}
+
+template<typename Key, typename V>
+boost::python::list MapWrapper<Key,V>::values(Map& x) {
+	boost::python::list t;
+	typename Map::iterator iter;
+	iter = x.begin();
+	for(;iter != x.end(); ++iter)
+		t.append(iter->second);
+	return t;
+}
+
+template<typename Key, typename V>
+boost::python::list MapWrapper<Key,V>::items(Map& x) {
+	boost::python::list t;
+	typename Map::iterator iter;
+	iter = x.begin();
+	for(; iter != x.end(); ++iter)
+		t.append(boost::python::make_tuple(iter->first, iter->second));
+	return t;
+}         
 
 template<typename Key, typename V>
 void MapWrapper<Key,V>::wrap(std::string const& python_name) {
@@ -30,6 +65,11 @@ void MapWrapper<Key,V>::wrap(std::string const& python_name) {
         .def("__setitem__", &set,
             boost::python::with_custodian_and_ward<1,2>())
         .def("__delitem__", &del)
+		.def("__contains__", &in)
+		.def("has_key", &in)
+		.def("keys", &keys)
+		.def("values", &values)
+		.def("items", &items)
     ;
 }
 
