@@ -1,4 +1,4 @@
-Chwilowo calosc mozna kompilowac przez ./make i uruchamiac przez ./zpr - w wolnej chwili napisze prawdziwego make'a albo sconsa.
+Dziala Makefile! :)
 
 W pliku Python_test.py proste testy obejmujace:
 	- map_int_string
@@ -9,8 +9,7 @@ W pliku Python_test.py proste testy obejmujace:
 	- set_double
 	- set_string
 
-W pliku Python_test_vectors.py bardziej zlozone testy dla 3 vectorow - int, double i std::string.
-Niedlugo postaram sie potestowac klase Foo.
+W pliku Python_test_vector.py testy jednostkowe dla vector<int>
 
 TODO:
 
