@@ -2,8 +2,9 @@
 
 using namespace StlContainersWrappers;
 
-void StlContainersWrappers::init_container_wrappers() {
-
+BOOST_PYTHON_MODULE(StlContainers) {
+    
+    //run containers wrappers
     VectorWrapper<int>::wrap("vector_int");
     SetWrapper<int>::wrap("set_int");
 
@@ -14,9 +15,10 @@ void StlContainersWrappers::init_container_wrappers() {
 	SetWrapper<std::string>::wrap("set_string");
 
     MapWrapper<int,std::string>::wrap("map_int_string");
-}
-
-BOOST_PYTHON_MODULE(StlContainers) {
-    StlContainersWrappers::init_container_wrappers();
+    
+    //run converters wrappers
+    boost::python::def("py_list_to_vector_int", PyContainersConverters::pyListToVector<int>);
+    boost::python::def("py_list_to_vector_double", PyContainersConverters::pyListToVector<double>);
+    boost::python::def("py_list_to_vector_string", PyContainersConverters::pyListToVector<std::string>);
 }
 

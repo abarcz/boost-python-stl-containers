@@ -9,18 +9,13 @@
 #define STL_TO_PYTHON_CONTAINERS_MAIN_MODULE
 
 #include <boost/python/module.hpp>
+#include <boost/python/def.hpp>
 #include <string>
 #include "VectorWrapper_py.hpp"
 #include "MapWrapper_py.hpp"
 #include "SetWrapper_py.hpp"
+#include "PyListToVector.hpp"
 
-namespace StlContainersWrappers {
-
-/** 
- * Initialize STL containers wrapping
- */
-void init_container_wrappers();
-
-}
+namespace StlContainersWrappers {}
 
 #endif

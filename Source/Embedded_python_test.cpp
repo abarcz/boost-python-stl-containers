@@ -55,14 +55,18 @@ int main() {
         //unit test from external .py file
         std::cout << "\nLaunching Python tests from Python_test.py..\n";
         exec_file("Python_test_vectors.py", globals, globals);
-        std::cout << "Embedded Python tests terminated.\n";
         
+        //converters test from external .py file
+        std::cout << "\nLaunching Python tests from Python_test_py_list_to_vector.py..\n";
+        exec_file("Python_test_py_list_to_vector.py", globals, globals);
+        
+        std::cout << "Embedded Python tests terminated.\n";
     } 
     catch (error_already_set) {
         PyErr_Print();
     }
 
-    Py_Finalize();	//end interpreter            
+    //Py_Finalize();	//end interpreter            
     
     return 0;
 }
