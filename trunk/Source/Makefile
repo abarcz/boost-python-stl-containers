@@ -2,3 +2,4 @@ all:
 	g++ StlContainers.cpp -lboost_python -lpython2.6 -I /usr/include/python2.6 -o StlContainers.so -shared
 tests:
 	g++ Embedded_python_test.cpp -lboost_python -lpython2.6 -I /usr/include/python2.6 -o zpr
+	g++ TestModule.cpp -lboost_python -lpython2.6 -I /usr/include/python2.6 -o TestModule.so -shared
