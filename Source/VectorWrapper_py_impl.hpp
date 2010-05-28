@@ -74,6 +74,14 @@ void VectorWrapper<V>::reverse(Vec& x) {
 }
 
 template<typename V>
+boost::python::list VectorWrapper<V>::getPyList(Vec& x) {
+    boost::python::list pyList;
+    for(typename Vec::iterator it = x.begin(); it != x.end(); ++it)
+        pyList.append(*it);
+    return pyList;
+}
+
+template<typename V>
 void VectorWrapper<V>::print(Vec& x) {
     if(x.size() == 0)
     {
@@ -100,6 +108,7 @@ void VectorWrapper<V>::wrap(std::string const& python_name) {
       .def("__delitem__", &del)
       .def("__iter__", boost::python::iterator<Vec>())
 	  .def("reverse", &reverse)
+      .def("get_list", &getPyList)
     ;
     #ifdef STL_TO_PYTHON_CONTAINERS_COMPARABLE
         wrapped.def("__contains__", &in);

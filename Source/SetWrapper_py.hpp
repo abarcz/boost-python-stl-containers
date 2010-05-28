@@ -1,11 +1,12 @@
 /**
  * Autor: Michal Andrzejewski, Aleksy Barcz
- * Wrapper for std::set to act like Python dict
+ * Wrapper for std::set to act like Python set
  */
 #ifndef STL_TO_PYTHON_CONTAINERS_SET_WRAPPER
 #define STL_TO_PYTHON_CONTAINERS_SET_WRAPPER
 
 #include <boost/python/class.hpp>
+#include <boost/python/list.hpp>
 #include <set>
 #include <iostream>
 
@@ -21,6 +22,8 @@ struct SetWrapper {
 	static void del(Set& x, const V& v);
 
 	static bool in(Set& x, V const& v);
+    
+    static boost::python::list getPyList(Set& x);
     
     static void print(Set& x);
     
