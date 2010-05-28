@@ -13,14 +13,15 @@ W pliku Python_test_vector.py testy jednostkowe dla vector<int>
 
 W pliku Python_test_Python_test_py_list_to_vector.py testy działania konwertera pylist->vector dla int, double
 
+W pliku Python_test_Python_test_py_dict_to_map.py testy działania konwertera pyDict->map
+
 Moduł TestModule: do wrappowania fcji C++ potrzebnych do wykonania rozmaitych testów, m.in. konwerterów
 Udostępnia pod Pythonem:
-print_vector_int/double/string(std::vector<T>);
 get_vector_sum_int/double(std::vector<T);	//zwraca sumę elementów wektora
 
 TODO:
 
-Mechanizm konwerterów: pylist->vect, pydict->map					[Aleks]
+Testy na klasie Foo									[Aleks/Michal]
 Powazne testy jednostkowe 								[Michal]
 Makefile/scons										[Michal]
 Dodatkowe metody (umozliwienie tworzenia slice'ow) 					[Michal]
@@ -31,6 +32,7 @@ Dokumentacja										[Aleks/Michal]
 
 Błędy niezależne(?) od nas:
 
+W PyListToVector:
 Przy konwersji Python::long -> C++::int występuje OverflowError - niby powinien dać się przechwycić, ale koniec końców wyskakuje nie wiadomo skąd
 jakiś czas później (garbage collector?)
 Z tego względu pod embedded prawdopodobnie trzeba będzie zrezygnować z PyFinalize(), a pod interpreterem.. nie konwertować longów na int :]
