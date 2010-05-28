@@ -50,6 +50,8 @@ void SetWrapper<V>::wrap(std::string const& python_name) {
             boost::python::with_custodian_and_ward<1,2>())
         .def("__contains__", &in)
         .def("__delitem__", &del)
-        .def("print_", &print)
     ;
+    #ifdef STL_TO_PYTHON_CONTAINERS_PRINTABLE
+        wrapped.def("print_", &print);
+    #endif
 }

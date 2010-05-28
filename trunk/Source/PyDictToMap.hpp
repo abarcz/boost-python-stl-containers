@@ -2,8 +2,8 @@
  * Author: Aleksy Barcz
  * Converts a boost::python::dict to std::map
  * */
-#ifndef STL_CONTAINERS_DICT_MAP_CONVERTER
-#define STL_CONTAINERS_DICT_MAP_CONVERTER
+#ifndef STL_TO_PYTHON_CONTAINERS_DICT_MAP_CONVERTER
+#define STL_TO_PYTHON_CONTAINERS_DICT_MAP_CONVERTER
 #include <map>
 #include <iostream>
 #include <boost/python/dict.hpp>

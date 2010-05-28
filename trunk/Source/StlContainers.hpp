@@ -11,6 +11,10 @@
 #include <boost/python/module.hpp>
 #include <boost/python/def.hpp>
 #include <string>
+//add methods requiring element comparison to wrappers
+#define STL_TO_PYTHON_CONTAINERS_COMPARABLE
+//add methods requiring element printing to wrappers
+#define STL_TO_PYTHON_CONTAINERS_PRINTABLE
 #include "VectorWrapper_py.hpp"
 #include "MapWrapper_py.hpp"
 #include "SetWrapper_py.hpp"

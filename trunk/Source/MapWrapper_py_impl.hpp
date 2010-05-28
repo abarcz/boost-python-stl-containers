@@ -88,7 +88,9 @@ void MapWrapper<Key,V>::wrap(std::string const& python_name) {
 		.def("keys", &keys)
 		.def("values", &values)
 		.def("items", &items)
-        .def("print_", &print)
     ;
+    #ifdef STL_TO_PYTHON_CONTAINERS_PRINTABLE
+        wrapped.def("print_", &print);
+    #endif
 }
 

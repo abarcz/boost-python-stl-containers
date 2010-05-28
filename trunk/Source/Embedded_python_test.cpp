@@ -17,7 +17,8 @@ int main() {
         object module = import("__main__");
         object globals = module.attr("__dict__");
         
-        //Adding .so current directory to Python module loader search path and importing module
+        //Add the .so's current directory to Python module loader search path 
+        //so we can import module StlContainers
         exec(
             "print 'Loading shared library' \n"
             "import sys                     \n"
@@ -38,6 +39,7 @@ int main() {
 		std::cout << "C++: wektorPyt.push_back(222);" << std::endl;
 		wektor.push_back(222);
 		std::cout << "C++: wektorPyt[1] == " << wektor[1] << std::endl;
+        
         //passing std::vector from C++ to Python
         std::cout << "C++: creating wektorCpp containing 303" << std::endl;
         std::vector<int> wektorCpp;
@@ -51,10 +53,18 @@ int main() {
                 "print 'Python: wektorCpp[1] == '    \n"
                 "print wektorCpp[1]                 \n"
                 ,globals, globals);
+    
+        //a couple of general tests
+        std::cout << "\nLaunching Python tests from Python_test.py..\n";
+        exec_file("Python_test.py", globals, globals);
         
         //unit test from external .py file
-        std::cout << "\nLaunching Python tests from Python_test.py..\n";
+        std::cout << "\nLaunching Python tests from Python_test_vectors.py..\n";
         exec_file("Python_test_vectors.py", globals, globals);
+        
+        //unit test from external .py file
+        std::cout << "\nLaunching Python tests from Python_test_vector_foo.py..\n";
+        exec_file("Python_test_vector_foo.py", globals, globals);
         
         //converters test from external .py files
         std::cout << "\nLaunching Python tests from Python_test_py_list_to_vector.py..\n";

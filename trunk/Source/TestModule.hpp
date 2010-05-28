@@ -5,8 +5,8 @@
 * inside Python interpreter.
 * 
 */
-#ifndef STL_CONTAINERS_LIST_VECTOR_CONVERTER
-#define STL_CONTAINERS_LIST_VECTOR_CONVERTER
+#ifndef STL_CONTAINERS_LIST_TEST_MODULE
+#define STL_CONTAINERS_LIST_TEST_MODULE
 #include <boost/python/module.hpp>
 #include <boost/python/class.hpp>
 #include <boost/python/def.hpp>
@@ -14,6 +14,14 @@
 #include <vector>
 #include <map>
 #include <string>
+//#define STL_TO_PYTHON_CONTAINERS_COMPARABLE
+//#define STL_TO_PYTHON_CONTAINERS_PRINTABLE
+#include "VectorWrapper_py.hpp"
+#include "MapWrapper_py.hpp"
+#include "SetWrapper_py.hpp"
+#include "PyListToVector.hpp"
+#include "PyDictToMap.hpp"
+
 
 namespace TestModule {
 
