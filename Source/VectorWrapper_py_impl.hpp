@@ -99,12 +99,16 @@ void VectorWrapper<V>::wrap(std::string const& python_name) {
             boost::python::with_custodian_and_ward<1,2>()) 
       .def("__delitem__", &del)
       .def("__iter__", boost::python::iterator<Vec>())
-      .def("__contains__", &in)
-	  .def("index", &index)
-	  .def("count", &count)
-	  .def("sort", &sort)
 	  .def("reverse", &reverse)
-      .def("print_", &print)
     ;
+    #ifdef STL_TO_PYTHON_CONTAINERS_COMPARABLE
+        wrapped.def("__contains__", &in);
+        wrapped.def("index", &index);
+        wrapped.def("count", &count);
+        wrapped.def("sort", &sort);
+    #endif
+    #ifdef STL_TO_PYTHON_CONTAINERS_PRINTABLE
+        wrapped.def("print_", &print);
+    #endif
     //return wrapped;
 }
