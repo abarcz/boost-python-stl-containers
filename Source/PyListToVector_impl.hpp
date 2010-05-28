@@ -7,14 +7,16 @@ std::vector<T> pyListToVector(boost::python::list pyList) {
         try {
             boost::python::extract<T> elem(pyList[i]);
             if(!elem.check()) {             //skip if element not convertible
-                std::cout << "pyListToVector: element at position "
-                << i << " couldn't be converted due to incorrect type." 
-                << std::endl;
+                if(StlContainersFlags::converterWarningsEnable)
+                    std::cout << "warning(pyListToVector): element at position "
+                    << i << " couldn't be converted due to incorrect type." 
+                    << std::endl;
             } 
             else
                 vec.push_back(elem);
         } catch(...) {
-                std::cout << "pyListToVector: element at position "
+            if(StlContainersFlags::converterWarningsEnable)
+                std::cout << "warning(pyListToVector): element at position "
                 << i << " couldn't be converted, "
                 << "probably due to surpassing type limits."<< std::endl;
         }

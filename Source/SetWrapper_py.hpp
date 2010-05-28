@@ -7,6 +7,7 @@
 
 #include <boost/python/class.hpp>
 #include <set>
+#include <iostream>
 
 namespace StlContainersWrappers {
 
@@ -20,6 +21,8 @@ struct SetWrapper {
 	static void del(Set& x, const V& v);
 
 	static bool in(Set& x, V const& v);
+    
+    static void print(Set& x);
     
     typedef boost::python::class_<Set> Class_s_;
     

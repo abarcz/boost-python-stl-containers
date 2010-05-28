@@ -11,15 +11,10 @@
 #include <boost/python/def.hpp>
 #include <iostream>
 #include <vector>
+#include <map>
 #include <string>
 
 namespace TestModule {
-
-/**
-* for pyListToVector() tests, prints the contents of a vector
-*/
-template<typename T>
-void printVector(std::vector<T>);
 
 /**
 * for pyListToVector() tests, prints the sum of elements of a vector

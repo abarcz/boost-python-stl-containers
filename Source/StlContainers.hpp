@@ -15,6 +15,7 @@
 #include "MapWrapper_py.hpp"
 #include "SetWrapper_py.hpp"
 #include "PyListToVector.hpp"
+#include "PyDictToMap.hpp"
 
 namespace StlContainersWrappers {}
 

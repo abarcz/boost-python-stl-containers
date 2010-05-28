@@ -9,6 +9,7 @@
 #include <boost/python/iterator.hpp>
 #include <algorithm>
 #include <vector>
+#include <iostream>
 
 namespace StlContainersWrappers {
     
@@ -34,6 +35,8 @@ struct VectorWrapper {
 	static void sort(Vec& x);
 
 	static void reverse(Vec& x);
+    
+    static void print(Vec& x);
     
     typedef boost::python::class_<Vec> class_v_;
     
