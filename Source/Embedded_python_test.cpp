@@ -58,13 +58,15 @@ int main() {
         std::cout << "\nLaunching Python tests from Python_test.py..\n";
         exec_file("Python_test.py", globals, globals);
         
-        //unit test from external .py file
+        //unit tests from external .py files
         std::cout << "\nLaunching Python tests from Python_test_vectors.py..\n";
         exec_file("Python_test_vectors.py", globals, globals);
         
-        //unit test from external .py file
         std::cout << "\nLaunching Python tests from Python_test_vector_foo.py..\n";
         exec_file("Python_test_vector_foo.py", globals, globals);
+        
+        std::cout << "\nLaunching Python tests from Python_test_vector_foobar.py..\n";
+        exec_file("Python_test_vector_foobar.py", globals, globals);
         
         //converters test from external .py files
         std::cout << "\nLaunching Python tests from Python_test_py_list_to_vector.py..\n";
