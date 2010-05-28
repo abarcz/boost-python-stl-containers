@@ -13,4 +13,9 @@ T TestModule::getVectorSum(std::vector<T> vec) {
 BOOST_PYTHON_MODULE(TestModule) {
     boost::python::def("get_vector_sum_int", getVectorSum<int>);
     boost::python::def("get_vector_sum_double", getVectorSum<double>);
+    
+    boost::python::class_<Foo> ("Foo")
+        .def(boost::python::init<int>())    //additional constructor Foo(int)
+        .def("getId", &Foo::getId)
+    ;
 }
