@@ -13,6 +13,8 @@ W pliku Python_test_vector.py testy jednostkowe dla vector<int>
 
 W pliku Python_test_vector_foo.py testy jednostkowe dla vector<Foo> (uproszczone, bo Foo nie ma operatorow porownania)
 
+W pliku Python_test_vector_foobar.py testy jednostkowe dla vector<Foobar>
+
 W pliku Python_test_Python_test_py_list_to_vector.py testy działania konwertera pylist->vector dla int, double
 
 W pliku Python_test_Python_test_py_dict_to_map.py testy działania konwertera pyDict->map
@@ -38,9 +40,16 @@ Foo()						//prosta klasa, bez operatorow porownania i <<
 vector_foo					//vector<Foo>
 map_int_foo					//map<int, Foo>
 
+Moduł TestModule2: j.w.
+Udostępnia pod Pythonem:
+Foobar()					//klasa Foo() + operatory porównania, bez <<
+vector_foobar
+map_int_foobar
+set_foobar
+
 TODO:
 
-Testy na klasie Foo2 udostępniającej operatory porównania (wziąć z BOOSTa)		[Aleks/Michal]
+Dopisanie do klasy Foobar możliwości wypisywania jej na ekran (niekonieczne)		[Aleks/Michal]
 Powazne testy jednostkowe 								[Michal]
 Makefile/scons										[Michal]
 Dodatkowe metody (umozliwienie tworzenia slice'ow) 					[Michal]
