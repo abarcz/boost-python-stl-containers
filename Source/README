@@ -15,9 +15,11 @@ W pliku Python_test_vector_foo.py testy jednostkowe dla vector<Foo> (uproszczone
 
 W pliku Python_test_vector_foobar.py testy jednostkowe dla vector<Foobar>
 
-W pliku Python_test_Python_test_py_list_to_vector.py testy działania konwertera pylist->vector dla int, double
+W pliku Python_test_Python_test_py_list_vector_conversions.py testy działania konwertera pylist->vector dla int, double, string
+oraz vector->pylist
 
-W pliku Python_test_Python_test_py_dict_to_map.py testy działania konwertera pyDict->map
+W pliku Python_test_Python_test_py_dict_map_conversions.py testy działania konwertera pyDict->map
+oraz map->pydict
 
 Sposob wrappowania przez uzytkownika dowolnej klasy Foo za pomoca naszych wrapperow:
 - vector<Foo> : przed zaincludowaniem VectorWrapper_py.hpp musi pojawic sie:
@@ -49,7 +51,7 @@ set_foobar
 
 TODO:
 
-Dopisanie do klasy Foobar możliwości wypisywania jej na ekran (niekonieczne)		[Aleks/Michal]
+Dopisanie do klasy Foobar możliwości wypisywania jej na ekran (niekonieczne,ale warto)	[Aleks/Michal]
 Powazne testy jednostkowe 								[Michal]
 Makefile/scons										[Michal]
 Dodatkowe metody (umozliwienie tworzenia slice'ow) 					[Michal]
