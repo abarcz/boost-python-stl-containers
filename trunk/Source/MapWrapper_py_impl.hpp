@@ -56,6 +56,24 @@ boost::python::list MapWrapper<Key,V>::items(Map& x) {
 }         
 
 template<typename Key, typename V>
+void MapWrapper<Key,V>::print(Map& x) {
+    int size = x.size();
+    if(size == 0)
+    {
+        std::cout << "{}" << std::endl;
+        return;
+    }
+    typename std::map<Key, V>::iterator it = x.begin();
+	std::cout << "{";
+	for(int i = 0; i < x.size() - 1; i++)
+	{
+        std::cout << it->first << ": " << it->second << ", ";
+        ++it;
+    }
+	std::cout << it->first << ": " << it->second << "}" << std::endl;
+}
+
+template<typename Key, typename V>
 void MapWrapper<Key,V>::wrap(std::string const& python_name) {
     Class_m_ wrapped(python_name.c_str());
     wrapped
@@ -70,6 +88,7 @@ void MapWrapper<Key,V>::wrap(std::string const& python_name) {
 		.def("keys", &keys)
 		.def("values", &values)
 		.def("items", &items)
+        .def("print_", &print)
     ;
 }
 

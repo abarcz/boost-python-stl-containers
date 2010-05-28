@@ -74,6 +74,19 @@ void VectorWrapper<V>::reverse(Vec& x) {
 }
 
 template<typename V>
+void VectorWrapper<V>::print(Vec& x) {
+    if(x.size() == 0)
+    {
+        std::cout << "[]" << std::endl;
+        return;
+    }
+    std::cout << "[";
+	for(int i = 0; i < x.size() - 1; i++)
+		std::cout << x[i] << ", ";
+	std::cout << x[x.size() - 1] << "]" << std::endl;
+}
+
+template<typename V>
 void VectorWrapper<V>::wrap(std::string const& python_name) {
     class_v_ wrapped(python_name.c_str());
     wrapped
@@ -91,6 +104,7 @@ void VectorWrapper<V>::wrap(std::string const& python_name) {
 	  .def("count", &count)
 	  .def("sort", &sort)
 	  .def("reverse", &reverse)
+      .def("print_", &print)
     ;
     //return wrapped;
 }

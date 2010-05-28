@@ -56,9 +56,12 @@ int main() {
         std::cout << "\nLaunching Python tests from Python_test.py..\n";
         exec_file("Python_test_vectors.py", globals, globals);
         
-        //converters test from external .py file
+        //converters test from external .py files
         std::cout << "\nLaunching Python tests from Python_test_py_list_to_vector.py..\n";
         exec_file("Python_test_py_list_to_vector.py", globals, globals);
+        
+        std::cout << "\nLaunching Python tests from Python_test_py_dict_to_map.py..\n";
+        exec_file("Python_test_py_dict_to_map.py", globals, globals);
         
         std::cout << "Embedded Python tests terminated.\n";
     } 

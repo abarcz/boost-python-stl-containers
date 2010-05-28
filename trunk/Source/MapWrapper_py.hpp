@@ -9,6 +9,7 @@
 #include <boost/python/list.hpp>
 #include <boost/python.hpp>
 #include <map>
+#include <iostream>
 
 namespace StlContainersWrappers {
     
@@ -30,6 +31,8 @@ struct MapWrapper {
 	static boost::python::list values(Map& x);
 	
 	static boost::python::list items(Map& x);
+    
+    static void print(Map& x);
     
     typedef boost::python::class_<Map> Class_m_;
     

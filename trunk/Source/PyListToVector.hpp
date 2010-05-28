@@ -9,6 +9,7 @@
 #include <boost/python/list.hpp>
 #include <boost/python/object.hpp>
 #include <boost/python/extract.hpp>
+#include "Flags.hpp"
 
 namespace PyContainersConverters{
 
