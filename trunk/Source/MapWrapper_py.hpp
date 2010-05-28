@@ -1,12 +1,13 @@
 /**
  * Authors: Michal Andrzejewski, Aleksy Barcz
- * Wrapper for std::map to act like Python list
+ * Wrapper for std::map to act like Python dict
  */
 #ifndef STL_TO_PYTHON_CONTAINERS_MAP_WRAPPER
 #define STL_TO_PYTHON_CONTAINERS_MAP_WRAPPER
 
 #include <boost/python/class.hpp>
 #include <boost/python/list.hpp>
+#include <boost/python/dict.hpp>
 #include <boost/python.hpp>
 #include <map>
 #include <iostream>
@@ -31,6 +32,8 @@ struct MapWrapper {
 	static boost::python::list values(Map& x);
 	
 	static boost::python::list items(Map& x);
+    
+    static boost::python::dict getPyDict(Map& x);
     
     static void print(Map& x);
     

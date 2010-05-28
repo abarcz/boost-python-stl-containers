@@ -23,6 +23,14 @@ bool SetWrapper<V>::in(Set& x, V const& v) {
 }
 
 template<typename V>
+boost::python::list SetWrapper<V>::getPyList(Set& x) {
+    boost::python::list pyList;
+    for(typename Set::iterator it = x.begin(); it != x.end(); ++it)
+        pyList.append(*it);
+    return pyList;
+}
+
+template<typename V>
 void SetWrapper<V>::print(Set& x) {
     int size = x.size();
     if(size == 0)
@@ -50,6 +58,7 @@ void SetWrapper<V>::wrap(std::string const& python_name) {
             boost::python::with_custodian_and_ward<1,2>())
         .def("__contains__", &in)
         .def("__delitem__", &del)
+        .def("get_list", &getPyList)
     ;
     #ifdef STL_TO_PYTHON_CONTAINERS_PRINTABLE
         wrapped.def("print_", &print);

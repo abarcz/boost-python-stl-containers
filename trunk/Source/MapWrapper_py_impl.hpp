@@ -56,6 +56,11 @@ boost::python::list MapWrapper<Key,V>::items(Map& x) {
 }         
 
 template<typename Key, typename V>
+boost::python::dict MapWrapper<Key,V>::getPyDict(Map& x) {
+    return boost::python::dict(items(x));
+}
+
+template<typename Key, typename V>
 void MapWrapper<Key,V>::print(Map& x) {
     int size = x.size();
     if(size == 0)
@@ -88,6 +93,7 @@ void MapWrapper<Key,V>::wrap(std::string const& python_name) {
 		.def("keys", &keys)
 		.def("values", &values)
 		.def("items", &items)
+        .def("get_dict", &getPyDict)
     ;
     #ifdef STL_TO_PYTHON_CONTAINERS_PRINTABLE
         wrapped.def("print_", &print);
