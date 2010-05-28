@@ -2,8 +2,8 @@
  * Author: Aleksy Barcz
  * Wrapping specializations using:
  * - std::vector    as list   (using VectorWrapper)
- * - std::map       as list   (using MapWrapper) 
- * - std::set       as dict   (using SetWrapper)
+ * - std::map       as dict   (using MapWrapper) 
+ * - std::set       as set    (using SetWrapper)
  */
 #ifndef STL_TO_PYTHON_CONTAINERS_MAIN_MODULE
 #define STL_TO_PYTHON_CONTAINERS_MAIN_MODULE
