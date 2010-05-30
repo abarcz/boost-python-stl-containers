@@ -147,6 +147,7 @@ def container_stress_append_and_delete_correct_int():
 		i -= 1
 	
 	equals(set_int.__len__(), 0)
+	tests += 1
 
 def container_stress_append_and_delete_correct_double():
 	global tests
@@ -164,6 +165,7 @@ def container_stress_append_and_delete_correct_double():
 		i -= 1
 	
 	equals(set_double.__len__(), 0)
+	tests += 1
 
 def container_stress_append_and_delete_correct_string():
 	global tests
@@ -181,6 +183,7 @@ def container_stress_append_and_delete_correct_string():
 		i -= 1
 	
 	equals(set_string.__len__(), 0)
+	tests += 1
 
 container_creation_successful_int()
 container_creation_successful_double()

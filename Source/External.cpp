@@ -45,6 +45,9 @@ int main() {
         std::cout << "\nLaunching Python tests from Python_test_sets.py..\n";
         exec_file("tests/Python_test_sets.py", globals, globals);
         
+        std::cout << "\nLaunching Python tests from Python_test_maps.py..\n";
+        exec_file("tests/Python_test_maps.py", globals, globals);
+
         std::cout << "\nLaunching Python tests from Python_test_vector_foo.py..\n";
         exec_file("tests/Python_test_vector_foo.py", globals, globals);
         

@@ -16,6 +16,7 @@ BOOST_PYTHON_MODULE(StlContainers) {
 	SetWrapper<std::string>::wrap("set_string");
 
     MapWrapper<int, std::string>::wrap("map_int_string");
+	MapWrapper<std::string, double>::wrap("map_string_double");
     MapWrapper<std::string, std::string>::wrap("map_string_string");
     MapWrapper<int, double>::wrap("map_int_double");
     

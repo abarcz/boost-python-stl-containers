@@ -25,7 +25,7 @@ template<typename Key, typename V>
 void MapWrapper<Key,V>::del(Map& x, const Key& i) {
     typename Map::iterator iter;
     iter = x.begin();
-    for(; iter != x.end(); ++iter);
+    for(; iter != x.end(); ++iter)
         if(iter->first == i)
             x.erase(iter);
 }                             
