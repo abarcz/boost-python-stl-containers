@@ -1,9 +1,8 @@
 /**
-* Author: Aleksy Barcz
-* 
 * Wraps C++ functions and classes necessary to perform StlContainers 
 * tests inside Python interpreter.
 * 
+* @author: Aleksy Barcz
 */
 #ifndef STL_CONTAINERS_LIST_TEST_MODULE2
 #define STL_CONTAINERS_LIST_TEST_MODULE2

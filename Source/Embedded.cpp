@@ -1,7 +1,8 @@
 /**
- * Autor: Aleksy Barcz
- * Test uses embedded Pythona interperter to pass
+ * Test uses embedded Python interpreter to pass
  * wrapped STL container instances from C++ to Python and vice versa.
+ *
+ * @author: Aleksy Barcz
  */ 
 #include <boost/python/exec.hpp>
 #include <boost/python/import.hpp>
