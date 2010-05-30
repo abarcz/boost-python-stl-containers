@@ -1,5 +1,5 @@
 /**
- * Test uses embedded Pythona interperter to pass
+ * Test uses embedded Python interpreter to pass
  * wrapped STL container instances from C++ to Python and vice versa.
  *
  * @author: Michal Andrzejewski, Aleksy Barcz
