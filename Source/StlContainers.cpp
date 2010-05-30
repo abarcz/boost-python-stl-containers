@@ -3,8 +3,9 @@
 using namespace StlContainersWrappers;
 
 BOOST_PYTHON_MODULE(StlContainers) {
-  
-    //run containers wrappers
+	/**
+	 * Wraps common containers into their Python representatives
+	 */
     VectorWrapper<int>::wrap("vector_int");
     SetWrapper<int>::wrap("set_int");
 
@@ -18,7 +19,9 @@ BOOST_PYTHON_MODULE(StlContainers) {
     MapWrapper<std::string, std::string>::wrap("map_string_string");
     MapWrapper<int, double>::wrap("map_int_double");
     
-    //run converters wrappers
+	/**
+	 * Wraps commont converters of C++ and Python collections
+	 */
     boost::python::def("py_list_to_vector_int", PyContainersConverters::pyListToVector<int>);
     boost::python::def("py_list_to_vector_double", PyContainersConverters::pyListToVector<double>);
     boost::python::def("py_list_to_vector_string", PyContainersConverters::pyListToVector<std::string>);

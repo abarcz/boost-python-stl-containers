@@ -1,0 +1,42 @@
+\hypertarget{namespace_py_containers_converters}{
+\section{PyContainersConverters Namespace Reference}
+\label{namespace_py_containers_converters}\index{PyContainersConverters@{PyContainersConverters}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Key , typename V $>$ }\\std::map$<$ Key, V $>$ \hyperlink{namespace_py_containers_converters_a0299ebf5e53b19d95b2d488676fd3b5b}{pyDictToMap} (boost::python::dict)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std::vector$<$ T $>$ \hyperlink{namespace_py_containers_converters_a8f3d92c41544fc4ee156509eaaf68729}{pyListToVector} (boost::python::list pyList)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Converts a boost::python::dict to std::map
+
+\begin{DoxyAuthor}{Author}
+: Aleksy Barcz
+\end{DoxyAuthor}
+Author: Aleksy Barcz Converts a boost::python::list to std::vector 
+
+\subsection{Function Documentation}
+\hypertarget{namespace_py_containers_converters_a0299ebf5e53b19d95b2d488676fd3b5b}{
+\index{PyContainersConverters@{PyContainersConverters}!pyDictToMap@{pyDictToMap}}
+\index{pyDictToMap@{pyDictToMap}!PyContainersConverters@{PyContainersConverters}}
+\subsubsection[{pyDictToMap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Key , typename V $>$ std::map$<$ Key, V $>$ PyContainersConverters::pyDictToMap (boost::python::dict {\em pyDict})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{namespace_py_containers_converters_a0299ebf5e53b19d95b2d488676fd3b5b}
+Converts a boost::python::dict to std::map
+
+Method extracts Python Dict elements (keys and values) and tries to bulid std::map of compatible types to hold those elements \begin{DoxyReturn}{Returns}
+std::map made of Python Dict elements 
+\end{DoxyReturn}
+\hypertarget{namespace_py_containers_converters_a8f3d92c41544fc4ee156509eaaf68729}{
+\index{PyContainersConverters@{PyContainersConverters}!pyListToVector@{pyListToVector}}
+\index{pyListToVector@{pyListToVector}!PyContainersConverters@{PyContainersConverters}}
+\subsubsection[{pyListToVector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std::vector$<$ T $>$ PyContainersConverters::pyListToVector (boost::python::list {\em pyList})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{namespace_py_containers_converters_a8f3d92c41544fc4ee156509eaaf68729}
+Converts a boost::python::list to std::vector
+
+Method extracts Python List items and makes std::vector out of those elements \begin{DoxyReturn}{Returns}
+std::vector made of Python List elements 
+\end{DoxyReturn}
