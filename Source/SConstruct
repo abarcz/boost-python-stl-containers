@@ -1,0 +1,25 @@
+SharedLibrary(source = "StlContainers.cpp", target = "StlContainers",
+		LIBS = ['boost_python', 'python2.6'],
+		LIBPATH = ['/usr/lib/python2.6'],
+		CPPPATH = ['/usr/include/python2.6'])
+
+SharedLibrary(source = "TestModule.cpp", target = "TestModule",
+		LIBS = ['boost_python', 'python2.6'],
+		LIBPATH = ['/usr/lib/python2.6'],
+		CPPPATH = ['/usr/include/python2.6'])
+
+SharedLibrary(source = "TestModule2.cpp", target = "TestModule2",
+		LIBS = ['boost_python', 'python2.6'],
+		LIBPATH = ['/usr/lib/python2.6'],
+		CPPPATH = ['/usr/include/python2.6'])
+
+Program(source = "Embedded.cpp", target = "Embedded_tests",
+		LIBS = ['boost_python', 'python2.6'],
+		LIBPATH = ['/usr/lib/python2.6'],
+		CPPPATH = ['/usr/include/python2.6'])
+
+Program(source = "External.cpp", target = "External_tests",
+		LIBS = ['boost_python', 'python2.6'],
+		LIBPATH = ['/usr/lib/python2.6'],
+		CPPPATH = ['/usr/include/python2.6'])
+ 
