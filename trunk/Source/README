@@ -9,7 +9,7 @@ W pliku Python_test.py proste testy obejmujace:
 	- set_double
 	- set_string
 
-W pliku Python_test_vector.py testy jednostkowe dla vector<int>
+W pliku Python_test_vectors.py testy jednostkowe dla vector<int, double, string>
 
 W pliku Python_test_vector_foo.py testy jednostkowe dla vector<Foo> (uproszczone, bo Foo nie ma operatorow porownania)
 
@@ -52,13 +52,11 @@ set_foobar
 TODO:
 
 Dopisanie do klasy Foobar możliwości wypisywania jej na ekran (niekonieczne,ale warto)	[Aleks/Michal]
-Powazne testy jednostkowe 								[Michal]
-Makefile/scons										[Michal]
+Powazne testy jednostkowe 								[Michal] // zostal jeszcze map
+Makefile/scons										[Michal] // makefile jest, scons moze
 Dodatkowe metody (umozliwienie tworzenia slice'ow) 					[Michal]
 Uporzadkowanie kodu									[Aleks/Michal]
 Dokumentacja										[Aleks/Michal]
-
-
 
 Błędy niezależne(?) od nas:
 

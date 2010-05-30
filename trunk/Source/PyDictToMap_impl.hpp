@@ -1,4 +1,7 @@
-
+/**
+ * Method extracts Python Dict elements (keys and values) and tries to bulid std::map of compatible types to hold those elements
+ * @returns std::map made of Python Dict elements
+ */
 template<typename Key, typename V>	
 std::map<Key, V> pyDictToMap(boost::python::dict pyDict) {
     std::map<Key, V> myMap;

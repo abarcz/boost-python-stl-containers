@@ -1,4 +1,7 @@
-
+/**
+ * Method extracts Python List items and makes std::vector out of those elements
+ * @returns std::vector made of Python List elements
+ */
 template<typename T>	
 std::vector<T> pyListToVector(boost::python::list pyList) {
 	std::vector<T> vec;

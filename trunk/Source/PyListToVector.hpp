@@ -1,7 +1,7 @@
 /**
  * Author: Aleksy Barcz
  * Converts a boost::python::list to std::vector
- * */
+ */
 #ifndef STL_TO_PYTHON_CONTAINERS_LIST_VECTOR_CONVERTER
 #define STL_TO_PYTHON_CONTAINERS_LIST_VECTOR_CONVERTER
 #include <vector>

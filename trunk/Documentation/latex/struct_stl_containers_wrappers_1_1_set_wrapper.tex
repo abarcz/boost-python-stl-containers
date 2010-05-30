@@ -1,0 +1,79 @@
+\hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper}{
+\section{StlContainersWrappers::SetWrapper$<$ V $>$ Struct Template Reference}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper}\index{StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}}
+}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_af95d8b464c01116c734f90435bc5a7de}{
+typedef std::set$<$ V, std::less$<$ V $>$, std::allocator$<$ V $>$ $>$ {\bfseries Set}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_af95d8b464c01116c734f90435bc5a7de}
+
+\item 
+\hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_a5af63f3f2e6e31f8f3df7bf83657a935}{
+typedef boost::python::class\_\-$<$ Set $>$ {\bfseries Class\_\-s\_\-}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_a5af63f3f2e6e31f8f3df7bf83657a935}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{struct_stl_containers_wrappers_1_1_set_wrapper_a5aa10d43c949ab14dce86ada294a517f}{add} (Set \&x, const V \&v)
+\item 
+static void \hyperlink{struct_stl_containers_wrappers_1_1_set_wrapper_ace89534d1947475d9df652cc028d21ff}{del} (Set \&x, const V \&v)
+\item 
+static bool \hyperlink{struct_stl_containers_wrappers_1_1_set_wrapper_a1962f5a329a40cb328e60971ee99e0be}{in} (const Set \&x, const V \&v)
+\item 
+static boost::python::list \hyperlink{struct_stl_containers_wrappers_1_1_set_wrapper_a1beec5bd4543b5f175ae95877a1844b8}{getPyList} (const Set \&x)
+\item 
+static void \hyperlink{struct_stl_containers_wrappers_1_1_set_wrapper_a3f90e1e6b44e90abe44c63c3f323c93c}{print} (const Set \&x)
+\item 
+static void \hyperlink{struct_stl_containers_wrappers_1_1_set_wrapper_aec5cc7bb0b7c14f8196571c5fd81d137}{wrap} (const std::string \&python\_\-name)
+\end{DoxyCompactItemize}
+\subsubsection*{template$<$typename V$>$ struct StlContainersWrappers::SetWrapper$<$ V $>$}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_a5aa10d43c949ab14dce86ada294a517f}{
+\index{StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}!add@{add}}
+\index{add@{add}!StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V $>$ void SetWrapper::add (Set \& {\em x}, \/  const V \& {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_a5aa10d43c949ab14dce86ada294a517f}
+Helper method for adding element into collection \hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_ace89534d1947475d9df652cc028d21ff}{
+\index{StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}!del@{del}}
+\index{del@{del}!StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}}
+\subsubsection[{del}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V $>$ void SetWrapper::del (Set \& {\em x}, \/  const V \& {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_ace89534d1947475d9df652cc028d21ff}
+Helper method for deleting element specified by its value \hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_a1beec5bd4543b5f175ae95877a1844b8}{
+\index{StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}!getPyList@{getPyList}}
+\index{getPyList@{getPyList}!StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}}
+\subsubsection[{getPyList}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V $>$ boost::python::list SetWrapper::getPyList (const Set \& {\em x})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_a1beec5bd4543b5f175ae95877a1844b8}
+Helper method making boost::python::list out of collection elements \begin{DoxyReturn}{Returns}
+boost::python::list containing all collection elements 
+\end{DoxyReturn}
+\hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_a1962f5a329a40cb328e60971ee99e0be}{
+\index{StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}!in@{in}}
+\index{in@{in}!StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}}
+\subsubsection[{in}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V $>$ bool SetWrapper::in (const Set \& {\em x}, \/  const V \& {\em v})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_a1962f5a329a40cb328e60971ee99e0be}
+Helper method for checking if element exists in collection \begin{DoxyReturn}{Returns}
+true if element exists in collection, false otherwise 
+\end{DoxyReturn}
+\hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_a3f90e1e6b44e90abe44c63c3f323c93c}{
+\index{StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}!print@{print}}
+\index{print@{print}!StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V $>$ void SetWrapper::print (const Set \& {\em x})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_a3f90e1e6b44e90abe44c63c3f323c93c}
+Helper method for printing collection elements in Python style \hypertarget{struct_stl_containers_wrappers_1_1_set_wrapper_aec5cc7bb0b7c14f8196571c5fd81d137}{
+\index{StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}!wrap@{wrap}}
+\index{wrap@{wrap}!StlContainersWrappers::SetWrapper@{StlContainersWrappers::SetWrapper}}
+\subsubsection[{wrap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename V $>$ void SetWrapper::wrap (const std::string \& {\em python\_\-name})\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{struct_stl_containers_wrappers_1_1_set_wrapper_aec5cc7bb0b7c14f8196571c5fd81d137}
+Method for actual container wrapping into Python-\/recognizable names and methods 
+
+The documentation for this struct was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Source/SetWrapper\_\-py.hpp\item 
+Source/SetWrapper\_\-py\_\-impl.hpp\end{DoxyCompactItemize}
