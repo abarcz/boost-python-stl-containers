@@ -7,7 +7,7 @@ using namespace StlContainersWrappers;
 template<typename V>
 const V VectorWrapper<V>::get(const Vec& x, int i) {
     if(i < 0) 
-        i += x.size();
+        i += (int)x.size();
     if(i >= 0 && i < (int)x.size()) 
         return x[i];
 }
@@ -18,7 +18,7 @@ const V VectorWrapper<V>::get(const Vec& x, int i) {
 template<typename V>
 void VectorWrapper<V>::set(Vec& x, int i, const V& v) {
     if(i < 0) 
-        i += x.size();
+        i += (int)x.size();
     if(i >= 0 && i < (int)x.size())
         x[i] = v;
 }
@@ -29,7 +29,7 @@ void VectorWrapper<V>::set(Vec& x, int i, const V& v) {
 template<typename V>
 void VectorWrapper<V>::del(Vec& x, int i) {
     if(i < 0) 
-        i += x.size();
+        i += (int)x.size();
     if(i >= 0 && i < (int)x.size()) {
         typename Vec::iterator iter;
         iter = x.begin();
