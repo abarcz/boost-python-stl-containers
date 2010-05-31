@@ -90,14 +90,14 @@ def container_index_operator_works_double():
 	global tests
 	vector_double = StlContainers.vector_double()
 	vector_double.append(1.93)
-	equals(vector_double[0], 1)
+	equals(vector_double[0], 1.93)
 	tests += 1
 
 def container_index_operator_works_string():
 	global tests
 	vector_string = StlContainers.vector_string()
 	vector_string.append("YAWN")
-	equals(vector_string[0], 1)
+	equals(vector_string[0], "YAWN")
 	tests += 1
 
 def container_deletion2_successful_int():
@@ -364,6 +364,14 @@ def container_stress_append_and_delete_correct_string():
 	equals(vector_string.__len__(), 0)
 	tests += 1
 
+def container_get_list_correct_int():
+	global tests
+	vector = StlContainers.vector_int()
+	vector.append(1)
+	a = [1]
+	equals(vector.get_list(), a)
+	tests += 1
+
 
 container_creation_successful_int()
 container_creation_successful_double()
@@ -401,6 +409,7 @@ container_sort_correct_string()
 container_stress_append_and_delete_correct_int()
 container_stress_append_and_delete_correct_double()
 container_stress_append_and_delete_correct_string()
+container_get_list_correct_int()
 
 print str(tests) + " tests run."
 print str(errors) + " errors found."
