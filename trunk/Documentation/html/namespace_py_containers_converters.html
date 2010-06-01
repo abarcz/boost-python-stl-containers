@@ -49,11 +49,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memTemplParams" colspan="2">template&lt;typename Key , typename V &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">std::map&lt; Key, V &gt;&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_py_containers_converters.html#a0299ebf5e53b19d95b2d488676fd3b5b">pyDictToMap</a> (boost::python::dict)</td></tr>
 <tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr><td class="memTemplItemLeft" align="right" valign="top">std::set&lt; T &gt;&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_py_containers_converters.html#acd8fbea72afcee1385a61c81b170098b">pyListToSet</a> (boost::python::list pyList)</td></tr>
+<tr><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_py_containers_converters.html#a8f3d92c41544fc4ee156509eaaf68729">pyListToVector</a> (boost::python::list pyList)</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Converts a boost::python::dict to std::map</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>: Aleksy Barcz</dd></dl>
+<p>Author: Aleksy Barcz Converts a boost::python::list to std::set</p>
 <p>Author: Aleksy Barcz Converts a boost::python::list to std::vector </p>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a0299ebf5e53b19d95b2d488676fd3b5b"></a><!-- doxytag: member="PyContainersConverters::pyDictToMap" ref="a0299ebf5e53b19d95b2d488676fd3b5b" args="(boost::python::dict)" -->
@@ -76,6 +79,29 @@ template&lt;typename Key , typename V &gt; </div>
 <p>Converts a boost::python::dict to std::map</p>
 <p>Method extracts Python Dict elements (keys and values) and tries to bulid std::map of compatible types to hold those elements </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>std::map made of Python Dict elements </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acd8fbea72afcee1385a61c81b170098b"></a><!-- doxytag: member="PyContainersConverters::pyListToSet" ref="acd8fbea72afcee1385a61c81b170098b" args="(boost::python::list pyList)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::set&lt; T &gt; PyContainersConverters::pyListToSet </td>
+          <td>(</td>
+          <td class="paramtype">boost::python::list&nbsp;</td>
+          <td class="paramname"> <em>pyList</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Converts a boost::python::list to std::set</p>
+<p>Method extracts Python List items and makes std::set out of those elements </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>std::set made of Python List elements </dd></dl>
 
 </div>
 </div>
@@ -117,7 +143,7 @@ template&lt;typename T &gt; </div>
 </iframe>
 </div>
 
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun May 30 15:19:30 2010 for boost-python-stl-containers by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Wed Jun 2 00:41:38 2010 for boost-python-stl-containers by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
