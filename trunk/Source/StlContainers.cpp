@@ -17,7 +17,9 @@ BOOST_PYTHON_MODULE(libStlContainers) {
 
     MapWrapper<int, std::string>::wrap("map_int_string");
 	MapWrapper<std::string, double>::wrap("map_string_double");
-    
+    MapWrapper<std::string, std::string>::wrap("map_string_string");
+    MapWrapper<int, double>::wrap("map_int_double");
+
 	/**
 	 * Wraps common converters for C++ and Python collections
 	 */
