@@ -1,6 +1,6 @@
 # Author: Michal Andrzejewski, Aleksy Barcz
 #
-from TestModule2 import *
+from libFoobar import *
 
 print 'Now running unit tests from Python_test_vector_foobar.py..'
 

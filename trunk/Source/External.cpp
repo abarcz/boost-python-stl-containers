@@ -25,11 +25,10 @@ int main() {
          * so we can import module StlContainers
 		 */
         exec(
-            "print 'Loading shared library' \n"
+            "#print 'Loading shared library' \n"
             "import sys                     \n"
             "sys.path.append(\"./\")        \n"
 			"sys.path.append(\"./tests\")  	\n"
-            "import StlContainers           \n"
             ,globals, globals);
                    
 
@@ -56,6 +55,9 @@ int main() {
         
         std::cout << "\nLaunching Python tests from Python_test_py_list_vector_conversions.py..\n";
         exec_file("tests/Python_test_py_list_vector_conversions.py", globals, globals);
+        
+        std::cout << "\nLaunching Python tests from Python_test_py_list_set_conversions.py..\n";
+        exec_file("tests/Python_test_py_list_set_conversions.py", globals, globals);
         
         std::cout << "\nLaunching Python tests from Python_test_py_dict_map_conversions.py..\n";
         exec_file("tests/Python_test_py_dict_map_conversions.py", globals, globals);

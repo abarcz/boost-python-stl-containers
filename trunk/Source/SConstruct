@@ -3,12 +3,12 @@ SharedLibrary(source = "StlContainers.cpp", target = "StlContainers",
 		LIBPATH = ['/usr/lib/python2.6'],
 		CPPPATH = ['/usr/include/python2.6'])
 
-SharedLibrary(source = "TestModule.cpp", target = "TestModule",
+SharedLibrary(source = "Foo.cpp", target = "Foo",
 		LIBS = ['boost_python', 'python2.6'],
 		LIBPATH = ['/usr/lib/python2.6'],
 		CPPPATH = ['/usr/include/python2.6'])
 
-SharedLibrary(source = "TestModule2.cpp", target = "TestModule2",
+SharedLibrary(source = "Foobar.cpp", target = "Foobar",
 		LIBS = ['boost_python', 'python2.6'],
 		LIBPATH = ['/usr/lib/python2.6'],
 		CPPPATH = ['/usr/include/python2.6'])

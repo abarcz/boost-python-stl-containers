@@ -126,7 +126,7 @@ void VectorWrapper<V>::print(const Vec& x) {
         return;
     }
     std::cout << "[";
-	for(int i = 0; i < x.size() - 1; i++)
+	for(int i = 0; i < (int)x.size() - 1; i++)
 		std::cout << x[i] << ", ";
 	std::cout << x[x.size() - 1] << "]" << std::endl;
 }

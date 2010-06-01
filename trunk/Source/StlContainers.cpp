@@ -2,7 +2,7 @@
 
 using namespace StlContainersWrappers;
 
-BOOST_PYTHON_MODULE(StlContainers) {
+BOOST_PYTHON_MODULE(libStlContainers) {
 	/**
 	 * Wraps common containers into their Python representatives
 	 */
@@ -21,11 +21,15 @@ BOOST_PYTHON_MODULE(StlContainers) {
     MapWrapper<int, double>::wrap("map_int_double");
     
 	/**
-	 * Wraps commont converters of C++ and Python collections
+	 * Wraps common converters for C++ and Python collections
 	 */
     boost::python::def("py_list_to_vector_int", PyContainersConverters::pyListToVector<int>);
     boost::python::def("py_list_to_vector_double", PyContainersConverters::pyListToVector<double>);
     boost::python::def("py_list_to_vector_string", PyContainersConverters::pyListToVector<std::string>);
+    
+    boost::python::def("py_list_to_set_int", PyContainersConverters::pyListToSet<int>);
+    boost::python::def("py_list_to_set_double", PyContainersConverters::pyListToSet<double>);
+    boost::python::def("py_list_to_set_string", PyContainersConverters::pyListToSet<std::string>);
     
     boost::python::def("py_dict_to_map_int_string", PyContainersConverters::pyDictToMap<int, std::string>);
     boost::python::def("py_dict_to_map_string_string", PyContainersConverters::pyDictToMap<std::string, std::string>);

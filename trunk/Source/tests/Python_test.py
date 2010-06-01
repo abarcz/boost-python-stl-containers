@@ -4,16 +4,16 @@
 #
 print 'Now running tests from Python_test.py..'
 
-import StlContainers
+import libStlContainers
 
-map_int_string = StlContainers.map_int_string()
-vector_int = StlContainers.vector_int()
-set_int = StlContainers.set_int()
+map_int_string = libStlContainers.map_int_string()
+vector_int = libStlContainers.vector_int()
+set_int = libStlContainers.set_int()
 
-vector_double = StlContainers.vector_double()
-vector_string = StlContainers.vector_string()
-set_double = StlContainers.set_double()
-set_string = StlContainers.set_string()
+vector_double = libStlContainers.vector_double()
+vector_string = libStlContainers.vector_string()
+set_double = libStlContainers.set_double()
+set_string = libStlContainers.set_string()
 
 map_int_string[0] = "a"
 map_int_string[1] = "b"

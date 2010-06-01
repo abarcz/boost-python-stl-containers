@@ -1,8 +1,14 @@
 /**
- * Wrapping specializations using:
+ * Wraps specializations using:
  * - std::vector    as list   (using VectorWrapper)
  * - std::map       as dict   (using MapWrapper) 
  * - std::set       as set    (using SetWrapper)
+ * (Wrappers include to Python converters as get_list(), get_dict())
+ * 
+ * Wraps converters:
+ * list -> std::vector
+ * list -> std::set
+ * dict -> std::map 
  *
  * @author: Aleksy Barcz
  */
@@ -20,6 +26,7 @@
 #include "MapWrapper_py.hpp"
 #include "SetWrapper_py.hpp"
 #include "PyListToVector.hpp"
+#include "PyListToSet.hpp"
 #include "PyDictToMap.hpp"
 
 namespace StlContainersWrappers {}

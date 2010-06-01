@@ -103,7 +103,7 @@ void MapWrapper<Key,V>::print(const Map& x) {
     }
     typename std::map<Key, V>::const_iterator it = x.begin();
 	std::cout << "{";
-	for(int i = 0; i < x.size() - 1; i++)
+	for(int i = 0; i < (int)x.size() - 1; i++)
 	{
         std::cout << it->first << ": " << it->second << ", ";
         ++it;

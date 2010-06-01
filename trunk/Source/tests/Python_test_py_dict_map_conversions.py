@@ -1,7 +1,6 @@
 # Author: Aleksy Barcz
 #
-from StlContainers import *
-from TestModule import *
+from libStlContainers import *
 
 print 'Now running tests from Python_test_py_dict_map_conversions.py..'
 
