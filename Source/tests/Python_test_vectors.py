@@ -1,6 +1,6 @@
 # Author: Michal Andrzejewski
 #
-import StlContainers
+import libStlContainers
 
 print 'Now running unit tests from Python_test_vectors.py for types int, double, string..'
 
@@ -18,46 +18,46 @@ def equals(a, b):
 
 def container_creation_successful_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	equals(vector_int.__len__(), 0)
 	tests += 1
 
 def container_creation_successful_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	equals(vector_double.__len__(), 0)
 	tests += 1
 
 def container_creation_successful_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	equals(vector_string.__len__(), 0)
 	tests += 1
 
 def container_append_successful_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	equals(vector_int.__len__(), 1)
 	tests += 1
 
 def container_append_successful_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.93)
 	equals(vector_double.__len__(), 1)
 	tests += 1
 
 def container_append_successful_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("YAWN")
 	equals(vector_string.__len__(), 1)
 	tests += 1
 
 def container_deletion_successful_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	vector_int.__delitem__(0)
 	equals(vector_int.__len__(), 0)
@@ -65,7 +65,7 @@ def container_deletion_successful_int():
 
 def container_deletion_successful_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.93)
 	vector_double.__delitem__(0)
 	equals(vector_double.__len__(), 0)
@@ -73,7 +73,7 @@ def container_deletion_successful_double():
 
 def container_deletion_successful_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("YAWN")
 	vector_string.__delitem__(0)
 	equals(vector_string.__len__(), 0)
@@ -81,28 +81,28 @@ def container_deletion_successful_string():
 
 def container_index_operator_works_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	equals(vector_int[0], 1)
 	tests += 1
 
 def container_index_operator_works_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.93)
 	equals(vector_double[0], 1.93)
 	tests += 1
 
 def container_index_operator_works_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("YAWN")
 	equals(vector_string[0], "YAWN")
 	tests += 1
 
 def container_deletion2_successful_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	vector_int.append(2)
 	vector_int.append(3)
@@ -113,7 +113,7 @@ def container_deletion2_successful_int():
 
 def container_deletion2_successful_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.1)
 	vector_double.append(2.2)
 	vector_double.append(3.3)
@@ -124,7 +124,7 @@ def container_deletion2_successful_double():
 
 def container_deletion2_successful_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("A")
 	vector_string.append("B")
 	vector_string.append("C")
@@ -135,7 +135,7 @@ def container_deletion2_successful_string():
 
 def container_clear_successful_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	vector_int.append(2)
 	vector_int.append(3)
@@ -145,7 +145,7 @@ def container_clear_successful_int():
 
 def container_clear_successful_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.1)
 	vector_double.append(2.2)
 	vector_double.append(3.3)
@@ -155,7 +155,7 @@ def container_clear_successful_double():
 
 def container_clear_successful_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("A")
 	vector_string.append("B")
 	vector_string.append("C")
@@ -165,70 +165,70 @@ def container_clear_successful_string():
 
 def container_contains_correct_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	equals(vector_int.__contains__(1), True)
 	tests += 1
 
 def container_contains_correct_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.1)
 	equals(vector_double.__contains__(1.1), True)
 	tests += 1
 
 def container_contains_correct_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("A")
 	equals(vector_string.__contains__("A"), True)
 	tests += 1
 
 def container_indexing_correct_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	equals(vector_int.index(1), 0)
 	tests += 1
 
 def container_indexing_correct_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.1)
 	equals(vector_double.index(1.1), 0)
 	tests += 1
 
 def container_indexing_correct_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("A")
 	equals(vector_string.index("A"), 0)
 	tests += 1
 
 def container_count_correct_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	equals(vector_int.count(1), 1)
 	tests += 1
 
 def container_count_correct_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.1)
 	equals(vector_double.count(1.1), 1)
 	tests += 1
 
 def container_count_correct_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("A")
 	equals(vector_string.count("A"), 1)
 	tests += 1
 
 def container_reverse_correct_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(1)
 	vector_int.append(2)
 	vector_int.append(3)
@@ -240,7 +240,7 @@ def container_reverse_correct_int():
 
 def container_reverse_correct_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(1.1)
 	vector_double.append(2.2)
 	vector_double.append(3.3)
@@ -252,7 +252,7 @@ def container_reverse_correct_double():
 
 def container_reverse_correct_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("A")
 	vector_string.append("B")
 	vector_string.append("C")
@@ -264,7 +264,7 @@ def container_reverse_correct_string():
 
 def container_sort_correct_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	vector_int.append(3)
 	vector_int.append(1)
 	vector_int.append(2)
@@ -276,7 +276,7 @@ def container_sort_correct_int():
 
 def container_sort_correct_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	vector_double.append(3.3)
 	vector_double.append(1.1)
 	vector_double.append(2.2)
@@ -288,7 +288,7 @@ def container_sort_correct_double():
 
 def container_sort_correct_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	vector_string.append("C")
 	vector_string.append("A")
 	vector_string.append("B")
@@ -300,7 +300,7 @@ def container_sort_correct_string():
 
 def container_stress_append_and_delete_correct_int():
 	global tests
-	vector_int = StlContainers.vector_int()
+	vector_int = libStlContainers.vector_int()
 	i = 0
 	while i < 10000:
 		vector_int.append(i)
@@ -322,7 +322,7 @@ def container_stress_append_and_delete_correct_int():
 
 def container_stress_append_and_delete_correct_double():
 	global tests
-	vector_double = StlContainers.vector_double()
+	vector_double = libStlContainers.vector_double()
 	i = 0
 	while i < 10000:
 		vector_double.append(i + 1.1)
@@ -344,7 +344,7 @@ def container_stress_append_and_delete_correct_double():
 
 def container_stress_append_and_delete_correct_string():
 	global tests
-	vector_string = StlContainers.vector_string()
+	vector_string = libStlContainers.vector_string()
 	i = 0
 	while i < 10000:
 		vector_string.append("A")
@@ -366,7 +366,7 @@ def container_stress_append_and_delete_correct_string():
 
 def container_get_list_correct_int():
 	global tests
-	vector = StlContainers.vector_int()
+	vector = libStlContainers.vector_int()
 	vector.append(1)
 	a = [1]
 	equals(vector.get_list(), a)

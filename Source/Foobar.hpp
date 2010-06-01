@@ -15,7 +15,7 @@
 #include "MapWrapper_py.hpp"
 #include "SetWrapper_py.hpp"
 
-namespace TestModule {
+namespace Foobars {
 
 /**
  * For wrappers and converters tests - a comparable user class

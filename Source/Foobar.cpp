@@ -1,8 +1,8 @@
-#include "TestModule2.hpp"
+#include "Foobar.hpp"
 
-using namespace TestModule;
+using namespace Foobars;
 
-BOOST_PYTHON_MODULE(TestModule2) {
+BOOST_PYTHON_MODULE(libFoobar) {
     boost::python::class_<Foobar> ("Foobar")
         .def(boost::python::init<int>())    //additional constructor Foo(int)
         .def("getId", &Foobar::getId)

@@ -1,6 +1,6 @@
 # Author: Michal Andrzejewski, Aleksy Barcz
 #
-from TestModule import *
+from libFoo import *
 
 print 'Now running unit tests from Python_test_vector_foo.py...'
 

@@ -1,6 +1,6 @@
 # Author: Michal Andrzejewski
 #
-import StlContainers
+import libStlContainers
 
 print 'Now running unit tests from Python_test_maps.py for types <int, string> and <string, double>..'
 
@@ -18,19 +18,19 @@ def equals(a, b):
 
 def container_creation_successful_int():
 	global tests
-	map_ = StlContainers.map_int_string()
+	map_ = libStlContainers.map_int_string()
 	equals(map_.__len__(), 0)
 	tests += 1
 
 def container_creation_successful_string():
 	global tests
-	map_ = StlContainers.map_string_double()
+	map_ = libStlContainers.map_string_double()
 	equals(map_.__len__(), 0)
 	tests += 1
 
 def container_indexing_correct_int():
 	global tests
-	map_ = StlContainers.map_int_string()
+	map_ = libStlContainers.map_int_string()
 	map_[0] = "ABC"
 	map_[3] = "CDE"
 	equals(map_[0], "ABC")
@@ -39,7 +39,7 @@ def container_indexing_correct_int():
 
 def container_indexing_correct_string():
 	global tests
-	map_ = StlContainers.map_string_double()
+	map_ = libStlContainers.map_string_double()
 	map_["A"] = 1.1
 	map_["C"] = 3.3
 	equals(map_["A"], 1.1)
@@ -48,7 +48,7 @@ def container_indexing_correct_string():
 
 def container_deletion_successful_int():
 	global tests
-	map_ = StlContainers.map_int_string()
+	map_ = libStlContainers.map_int_string()
 	map_[1] = "A"
 	map_.__delitem__(1)
 	equals(map_.__len__(), 0)
@@ -56,7 +56,7 @@ def container_deletion_successful_int():
 
 def container_deletion_successful_string():
 	global tests
-	map_ = StlContainers.map_string_double()
+	map_ = libStlContainers.map_string_double()
 	map_["A"] = 1.1
 	map_.__delitem__("A")
 	equals(map_.__len__(), 0)
@@ -64,7 +64,7 @@ def container_deletion_successful_string():
 
 def container_clear_successful_int():
 	global tests
-	map_ = StlContainers.map_int_string()
+	map_ = libStlContainers.map_int_string()
 	map_[1] = "A"
 	map_[10] = "B"
 	map_.clear()
@@ -73,7 +73,7 @@ def container_clear_successful_int():
 
 def container_clear_successful_string():
 	global tests
-	map_ = StlContainers.map_string_double()
+	map_ = libStlContainers.map_string_double()
 	map_["A"] = 1.1
 	map_["B"] = 2.2
 	map_.clear()
@@ -82,21 +82,21 @@ def container_clear_successful_string():
 
 def container_contains_correct_int():
 	global tests
-	map_ = StlContainers.map_int_string()
+	map_ = libStlContainers.map_int_string()
 	map_[1] = "A"
 	equals(map_.__contains__(1), True)
 	tests += 1
 
 def container_contains_correct_string():
 	global tests
-	map_ = StlContainers.map_string_double()
+	map_ = libStlContainers.map_string_double()
 	map_["A"] = 1.1
 	equals(map_.__contains__("A"), True)
 	tests += 1
 
 def container_stress_append_and_delete_correct_int():
 	global tests
-	map_ = StlContainers.map_int_string()
+	map_ = libStlContainers.map_int_string()
 	i = 0
 	while i < 10000:
 		map_[i] = "A"

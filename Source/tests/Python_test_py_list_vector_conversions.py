@@ -1,7 +1,6 @@
 # Author: Aleksy Barcz
 #
-from StlContainers import *
-import TestModule
+from libStlContainers import *
 
 print 'Now running tests from Python_test_py_list_vector_conversions.py..'
 
@@ -15,30 +14,6 @@ def equals(a, b):
 		print "Left operand value: " + str(a)
 		print "Right operand value: " + str(b)
 		errors += 1
-        
-def elem_sum(list):
-    sum = 0
-    for e in list:
-        sum += e
-    return sum    
-        
-def list_conversion_sum_int():
-    global tests
-    result_list = [1, 2321, 124523]
-    source_list = [1, 'c', 2321, 'text', 0.56, 124523]
-    test_sum = TestModule.get_vector_sum_int(py_list_to_vector_int(source_list))
-    correct_sum = elem_sum(result_list)
-    equals(test_sum, correct_sum)
-    tests += 1
-    
-def list_conversion_sum_double():
-    global tests
-    result_list = [1, 1.54, 2321, 0.56, 124523, 124.587]
-    source_list = [1, 'c', 1.54, 2321, 'text', 0.56, 124523, 124.587]
-    test_sum = TestModule.get_vector_sum_double(py_list_to_vector_double(source_list))
-    correct_sum = elem_sum(result_list)
-    equals(test_sum, correct_sum)
-    tests += 1
     
 def list_conversion_int():
     global tests
@@ -61,8 +36,6 @@ def list_conversion_string():
     equals(py_list_to_vector_string(source_list).get_list(), result_list)
     tests += 1
 
-list_conversion_sum_int()
-list_conversion_sum_double()
 list_conversion_int()
 list_conversion_double()
 list_conversion_string()

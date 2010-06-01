@@ -15,14 +15,7 @@
 #include "VectorWrapper_py.hpp"
 #include "MapWrapper_py.hpp"
 
-namespace TestModule {
-
-/**
-* For pyListToVector() tests, prints the sum of elements of a vector
-* (elements must support the += operator)
-*/
-template<typename T>
-T getVectorSum(std::vector<T>);
+namespace Foos {
 
 /**
  * For wrappers and converters tests
