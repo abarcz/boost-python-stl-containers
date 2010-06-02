@@ -8,6 +8,7 @@ template<typename Key, typename V>
 const V MapWrapper<Key,V>::get(Map& x, const Key& i) {
     if(x.find(i) != x.end()) 
         return x[i];
+    throw new std::exception;           //signalises that sth went wrong
 }
 
 /**

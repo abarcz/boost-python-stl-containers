@@ -10,6 +10,7 @@ const V VectorWrapper<V>::get(const Vec& x, int i) {
         i += (int)x.size();
     if(i >= 0 && i < (int)x.size()) 
         return x[i];
+    throw new std::exception;           //signalises that sth went wrong
 }
 
 /**
