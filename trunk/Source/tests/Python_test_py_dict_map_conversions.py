@@ -10,7 +10,7 @@ errors = 0
 def equals(a, b):
 	global errors
 	if(not (a == b)):
-		print "Error in "
+		print "Error"
 		print "Left operand value: " + str(a)
 		print "Right operand value: " + str(b)
 		errors += 1
