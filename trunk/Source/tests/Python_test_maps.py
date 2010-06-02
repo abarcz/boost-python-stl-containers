@@ -114,8 +114,8 @@ def container_stress_append_and_delete_correct_int():
 
 container_creation_successful_int()
 container_creation_successful_string()
-container_append_successful_int()
-container_append_successful_string()
+container_indexing_correct_int()
+container_indexing_correct_string()
 container_deletion_successful_int()
 container_deletion_successful_string()
 container_clear_successful_int()
