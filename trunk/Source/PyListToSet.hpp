@@ -1,6 +1,7 @@
 /**
- * Author: Aleksy Barcz
  * Converts a boost::python::list to std::set
+ *
+ * @author: Aleksy Barcz
  */
 #ifndef STL_TO_PYTHON_CONTAINERS_LIST_SET_CONVERTER
 #define STL_TO_PYTHON_CONTAINERS_LIST_SET_CONVERTER
