@@ -1,0 +1,7 @@
+﻿Files:
+Embedded,
+External,
+Foo,
+Foobar
+and the 'tests' directory
+are for testing purposes only and don't need to accompany the rest of the code.
