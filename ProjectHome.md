@@ -1,0 +1,1 @@
+Templates for passing stl containers from C++ to Python and vice versa
